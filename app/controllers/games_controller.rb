@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Games.all
+    @games = Game.all
     render json: @games, status: 200
   end
 
@@ -18,6 +18,12 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     render json: @game, status: 200
+  end
+
+  private
+
+  def game_params
+    
   end
 
 end
