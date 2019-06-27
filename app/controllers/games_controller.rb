@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
   # Add your GamesController code here
   def create
-    @game = Game.create(params[:state])
+    @game = Game.create(state: params[:state])
     render json: @game, status: 201
   end
 
@@ -12,7 +12,7 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    @game.update(params[:state])
+    @game.update(state: params[:state])
     render json: @game, status: 202
   end
 
