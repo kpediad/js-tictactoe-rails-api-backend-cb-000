@@ -18,7 +18,7 @@ RSpec.describe GamesController, :type => :controller do
       post :create, {
         :state => ["X", "", "", "", "", "", "", "", ""]
       }
-
+      byebug
       expect(Game.last.state).to eq ["X", "", "", "", "", "", "", "", ""]
     end
   end
