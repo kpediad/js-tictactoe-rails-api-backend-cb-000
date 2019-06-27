@@ -11,8 +11,9 @@ class GamesController < ApplicationController
   end
 
   def update
-    @game = Game.update(game_params)
-    render json: @game, status: 201
+    @game = Game.find(params[:id])
+    @game.update(game_params)
+    render json: @game, status: 202
   end
 
   def show
@@ -23,7 +24,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-
+    params.require(:game).permit(:state)
   end
 
 end
